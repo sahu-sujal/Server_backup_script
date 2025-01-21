@@ -50,7 +50,7 @@ function cleaning {
 }
 
 function s3_bucket_sync {
-        if ! aws s3 sync "$BACKUP_FOLDER" "$S3_BUCKET" --delete; then
+        if ! aws s3 sync "$backup_dir" "$S3_BUCKET" --delete; then
                 echo "unable to sync with s3"
                 exit 1
         fi
