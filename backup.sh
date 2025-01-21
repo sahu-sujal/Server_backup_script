@@ -14,8 +14,8 @@ timestamp=$(date '+%Y-%m-%d-%H-%M-%S')
 S3_BUCKET="s3://serverbackuptesting/backup"
 
 function display_usage {
-    if [[ $? -ne 2 ]]; then
-        echo "kindly add the arugument"
+    if [[ $# -ne 2 ]]; then
+        echo "kindly add the argument"
         echo "usage: $0 <path to source> <backup folder path>"
         exit 1
     fi
