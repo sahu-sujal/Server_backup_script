@@ -24,8 +24,11 @@ function display_usage {
 
 function create_backup {
 
-     if zip -r "${bachup_dir}/backup_${timestamp}.zip" "${source_dir}" 2>/dev/null; then
-        echo "bachup Generated Successfully backup_${timestamp}"
+    if zip -r "${backup_dir}/backup_${timestamp}.zip" "${source_dir}"; then
+        echo "Backup Generated Successfully: backup_${timestamp}.zip"
+    else
+        echo "Backup Failed"
+        exit 1
     fi
 }
 
