@@ -23,7 +23,7 @@ function display_usage {
 }
 
 function create_backup {
-
+    echo "Creating backup from ${source_dir} to ${backup_dir}/backup_${timestamp}.zip"
     if zip -r "${backup_dir}/backup_${timestamp}.zip" "${source_dir}"; then
         echo "Backup Generated Successfully: backup_${timestamp}.zip"
     else
